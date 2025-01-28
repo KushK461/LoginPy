@@ -1,20 +1,17 @@
-# Sample database of usernames and passwords
-user_database = {
-    "admin": "project",
-    "user1": "12345",
-    "guest": "guest1"
-}
+name = input("Enter name: ")
+enc = input("Pass is: ")
 
-def login():
-    print("Welcome to the Login System!")
-    username = input("Enter your username: ")
-    password = input("Enter your password: ")
+#name and enc conditions
+if not name.isalpha():
+    print("Error! only letters allowed in name.")
 
-    # Check if the username exists and password matches
-    if username in user_database and user_database[username] == password:
-        print("Login successful! Welcome,", username)
-    else:
-        print("Invalid username or password. Please try again.")
+elif not enc.isdigit():
+    print("Password should only have numbers!")
 
-# Run the login function
-login()
+#password length condition
+elif len(enc) < 8:
+    print("Password should be at least 8 digits long!")
+
+# If both are valid,output
+else:
+    print("Name is:", name, "Password is:", enc)
